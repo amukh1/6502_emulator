@@ -2,6 +2,13 @@
 #include <memory>
 #include <cstdint>
 #include <fstream>
+#include <map>
+
+const std::map<int, int[]> opcode_dict = {
+    {"LDA", {0xA9, 0xAD, 0xBD, 0xB9, 0xA5, 0xB5, 0xA1, 0xB1 }},
+    {"LDX", {0xA2}}
+};
+
 
 #include "./6502.h"
 
@@ -35,6 +42,18 @@ void _6502::pop() {
     this->S++;
     this->A = this->read(this->S);
     this->write(0,this->S);
+}
+
+void _6502::IRQ() {
+    
+}
+
+void _6502::NMI() {
+    
+}
+
+void _6502::tick() {
+
 }
 
 void _6502::log() {

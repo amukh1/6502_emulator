@@ -21,6 +21,8 @@ struct _6502 {
 
     // TODO: Other 2 interupts
     void reset();
+    void IRQ();
+    void NMI();
     DATA read(ADDRESS add);
     void write(DATA data, ADDRESS add);
     void tick();
